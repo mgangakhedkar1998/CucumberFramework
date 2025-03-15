@@ -1,31 +1,31 @@
+
 Feature: login functionality
 
   Background:
-    Given user should be on login page
-
+    Given user should be on login
 
   Scenario: valid login
-    When user enters valid credentials
-    Then user should navigate to home page
+    When user enters valid credentilas
+    Then user should navigated to home page
     And user can see logout link
     And close browser
 
-
-  Scenario: invalid login
-    When user enters invalid credentials
+  @modi
+  Scenario: Invalid login
+    When user enters the invalid credentilas
     Then user should be on same page
     And user can see error message
     And close browser
 
   @modi
-  Scenario Outline: invalid login with data driven
-    When user enters invalid credentials user mane as "<userid>" and password as "<password>"
+  Scenario Outline: Invalid login with data driven
+    When user enters the invalid credentilas username as "<userid>" and password as "<password>"
     Then user should be on same page
     And user can see error message
     And close browser
     Examples:
-    | userid | password |
-    | ad1    | pw1      |
-    | ad2    | pw2      |
-
-
+      |userid | password|
+      |ad1    | pw1     |
+      |ad2    | pw2     |
+      |ad3    | pw3     |
+      |ad4    | pw4     |
